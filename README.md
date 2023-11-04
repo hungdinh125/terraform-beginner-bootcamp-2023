@@ -14,3 +14,11 @@ The general format:
 - **PATCH** version when you make backward compatible bug fixes
 
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+
+## Install the terraform CLI
+
+[Terraform installation](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+
+[Shebang wiki](https://en.wikipedia.org/wiki/Shebang_(Unix))
+
+[Gitpod tasks](https://www.gitpod.io/docs/configure/workspaces/tasks)
