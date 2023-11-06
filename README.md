@@ -76,3 +76,10 @@ All future workspaces launched will set the env vars for all bash temrinals open
 You can also set en vars in the `.gitpod.yml` but this can only contain non-sentitive env vars.
 
 Fixed the merge conflicts.
+
+### AWS CLI installation
+
+AWS CLI is installed for project via the bash script [`./bin/install-aws-cli`](./bin/install-aws-cli)
+
+[Getting started installed](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
