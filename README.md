@@ -83,3 +83,57 @@ AWS CLI is installed for project via the bash script [`./bin/install-aws-cli`](.
 
 [Getting started installed](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
+# Terraform Basics
+
+### Terraform Registry
+
+Terraform sources their providers and modules from the Terraform registry which is located at [registry.terraform.io](https://registry.terraform.io/)
+
+- **Providers** are an interface to APIs that allow you o create resources in Terraform.
+- **Modules** are a way to make large amount of terraform code modular, portable and sharable.
+
+### Terraform Console
+
+We can see a list of all the terraform cli by simply typing `terraform`
+
+#### Terraform Init
+
+At the start of a new terraform project, we will run `terraform init` to donwload the binaries for the terraform providers that we'll use in the project.
+
+#### Terraform Plan
+
+`terraform plan`
+
+This will generate out a changeset, about the state of infrastructure and what will be changed.
+
+We can output this changeset ie. "plan" to be passed to an apply, but often you can just ignore outputting.
+
+#### Terrform Apply
+
+`terraform apply`
+
+This cli runs the plan and pass the changeset to be executed by terraform. Appply should prompt yes or no.
+
+If we want to automatically approve an apply, we can propvide the auto-approve flag, eg. `terraform apply --auto-approve`
+
+### Terraform Locked Files
+
+`.terraform.lock.hcl` contains the locked versioning for the providers or modules that should be used in your project.
+
+The Terraform Lock File **should be committed** to your Version Control System (VCS), eg. Github
+
+### Terraform State Files
+
+`.terraform.tfstate` contains information about the current state of infrastructure .
+
+The file **should not be committed** to your VCS.
+
+This file contains sensitive date, so if you lose it, you lose the known state of your infrastructure.
+
+`terraform.tfstate.backup` is the previous state of file state.
+
+### Terraform Directory
+
+`.terraform` directory contains binaries of terraform providers.
+
+
