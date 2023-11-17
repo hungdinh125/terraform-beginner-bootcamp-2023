@@ -116,6 +116,15 @@ This cli runs the plan and pass the changeset to be executed by terraform. Apppl
 
 If we want to automatically approve an apply, we can propvide the auto-approve flag, eg. `terraform apply --auto-approve`
 
+#### Terraform Destroy
+
+`terraform destroy`
+
+This will destroy resources.
+
+You can also use the auto approve flag to skip the approve prompt, eg. `terraform destroy --auto-approve`
+
+
 ### Terraform Locked Files
 
 `.terraform.lock.hcl` contains the locked versioning for the providers or modules that should be used in your project.
