@@ -145,4 +145,25 @@ This file contains sensitive date, so if you lose it, you lose the known state o
 
 `.terraform` directory contains binaries of terraform providers.
 
+## Issue with Terraform Login when using Terraform Cloud
+
+When performing `terraform login`, it will launch bash with URL to generate token https://app.terraform.io/app/settings/tokens?source=terraform-login, but it does not work as expect in Gitpod VCS.
+
+The workaround is to manually create the file
+
+```bash
+open /home/gitpod/.terraform.d/credentials.tfrc.json
+```
+
+Provide the following code, and replace your token
+
+```json
+{
+    "credentials": {
+      "app.terraform.io": {
+        "token": "YOUR TOKEN IS NEEDED HERE"
+      }
+    }
+  }
+  ```
 
