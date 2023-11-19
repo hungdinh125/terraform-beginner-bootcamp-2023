@@ -1,11 +1,13 @@
 tasks:
   - name: terraform
     before: |
+      source ./bin/set-tf-alias
       source ./bin/install-terraform-cli
   - name: aws-cli
     env:
       AWS_CLI_AUTO_PROMPT: on-partial
     before: |
+      source ./bin/set-tf-alias
       source ./bin/install-aws-cli
 vscode:
   extensions:
