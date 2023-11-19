@@ -1,6 +1,6 @@
 #!usr/bin/env bash
 
-# Check if .bash_profile exists, if not, create it
+## Check if .bash_profile exists, if not, create it
 if [ ! -f ~/.bash_profile ]; then
     touch ~/.bash_profile
 fi
