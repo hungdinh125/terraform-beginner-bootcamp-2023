@@ -167,3 +167,37 @@ Provide the following code, and replace your token
   }
   ```
 
+We have autmoated this workaround with the following bash script [bin/generate-tfrc-credentials]
+
+```bash
+#!usr/bin/env bash
+
+# Destination directory
+terraform_dir="/home/gitpod/.terraform.d/"
+
+# Check if the directory exists, create if not
+if [ ! -d "$terraform_dir" ]; then
+    mkdir -p "$terraform_dir"
+fi
+
+# Check if TERRAFORM_CLOUD_TOKEN is set
+if [ -z "$TERRAFORM_CLOUD_TOKEN" ]; then
+    echo "Error: TERRAFORM_CLOUD_TOKEN environment variable is not set."
+    exit 1
+fi
+
+# JSON structure for credentials.tfrc.json
+json_data='{
+  "credentials": {
+    "app.terraform.io": {
+      "token": "'"$TERRAFORM_CLOUD_TOKEN"'"
+    }
+  }
+}'
+
+# Write JSON data to credentials.tfrc.json
+echo "$json_data" > "$terraform_dir/credentials.tfrc.json"
+
+echo "credentials.tfrc.json generated successfully in $terraform_dir."
+
+```
